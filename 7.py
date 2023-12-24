@@ -1,4 +1,5 @@
-import json
+from servise import get_one_to_id, up_for_id, cread_one_to_id, delete_one_to_id
+from json_servise import read_inf, wr
 
 basa_auto_parts = {
     "shop_name": "Velo Bike",
@@ -67,56 +68,7 @@ basa_auto_parts = {
     ]
 }
 
-def wr(basa_auto_parts, file_name):
-    basa_auto_parts = json.dumps(basa_auto_parts)
-    basa_auto_parts = json.loads(str(basa_auto_parts))
-
-    with open(file_name, 'w', encoding="utf-8") as file:
-        json.dump(basa_auto_parts, file, indent=4)
-
 #wr(basa_auto_parts,"basa.json")
-      
-def read_inf(file_name):
-    with open(file_name,'r',encoding="utf-8") as file:
-        return json.load(file)
-
-def get_one_to_id(id,elem):
-    basa = read_inf("basa.json")
-
-    for e in basa[elem]:
-        if e["id"] == id:
-            return e
-
-    return {"message": f"Element with {id} not found"}
-
-def up_for_id(id,person,name):
-    basa = read_inf("basa.json")
-    for i, e in enumerate(basa[name]):
-        if e["id"] == id:
-            e["name"] = person["name"]
-            e["age"] = person["age"]
-            e["email"] = person["email"]
-            wr(basa,"basa.json")
-            return e
-
-    return {"message": f"Element with {id} not found"}
-
-def cread_one_to_id(person,status):
-    basa = read_inf("basa.json")
-
-    last_id = len(basa[status])
-    basa[status].append({"id": last_id + 1, **person})
-    wr(basa,"basa.json")
-    
-def delete_one_to_id(id,person):
-    basa = read_inf("basa.json")
-    for i, e in enumerate(basa[person]):
-        if e["id"] == id:
-            delete = basa[person].pop(i)
-            wr(basa,"basa.json")
-            return delete
-
-    return {"message": f"Element with {id} not found"}
 
 b = 10
 while b > 0:
