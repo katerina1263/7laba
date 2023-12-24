@@ -1,0 +1,66 @@
+{
+    "shop_name": "Velo Bike",
+    "address": "Tekstilshchikov, 26",
+    "workers": [
+        {
+            "id": 1,
+            "name": "Andry Popov",
+            "age": 46,
+            "emai": "andry_pop@mail.com",
+            "class_id": 1
+        },
+        {
+            "id": 2,
+            "name": "Oleg Linal",
+            "age": 65,
+            "email": "oleg65@gmail.com",
+            "class_id": 2
+        },
+        {
+            "id": 3,
+            "name": "Ivan Sorokin",
+            "age": 25,
+            "email": "sorok_iv@gmail.com",
+            "class_id": 1
+        },
+        {
+            "id": 4,
+            "name": "Marina Raspytina",
+            "age": 27,
+            "email": "marishka.r@mail.ru",
+            "class_id": 2
+        }
+    ],
+    "classes": [
+        {
+            "id": 1,
+            "name": "seller",
+            "class_nachalnik_id": 1,
+            "worker_id": [
+                1,
+                3
+            ]
+        },
+        {
+            "id": 2,
+            "name": "consultant",
+            "class_nachalnik_id": 2,
+            "worker_id": [
+                2,
+                4
+            ]
+        }
+    ],
+    "nachalniks": [
+        {
+            "id": 1,
+            "name": "Elena Obyhova",
+            "email": "elena_obyhova@example.com"
+        },
+        {
+            "id": 2,
+            "name": "Katy Popova ",
+            "email": "katerina1263.p@gmail.com"
+        }
+    ]
+}
